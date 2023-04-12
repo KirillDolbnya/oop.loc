@@ -4,19 +4,22 @@ require_once "vendor/autoload.php";
 
 
 $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
-    $r->addRoute('GET', '/', ['App\controller\HomeController','register']);
-
+    $r->addRoute('GET', '/register', ['App\controller\HomeController','registration']);
+    $r->addRoute('POST', '/registerService', ['App\controller\HomeController','registerService']);
 });
 
 // Fetch method and URI from somewhere
 $httpMethod = $_SERVER['REQUEST_METHOD'];
 $uri = $_SERVER['REQUEST_URI'];
 
+var_dump($uri);
+
 // Strip query string (?foo=bar) and decode URI
 if (false !== $pos = strpos($uri, '?')) {
     $uri = substr($uri, 0, $pos);
 }
 $uri = rawurldecode($uri);
+var_dump($uri);
 
 $routeInfo = $dispatcher->dispatch($httpMethod, $uri);
 switch ($routeInfo[0]) {
@@ -33,7 +36,7 @@ switch ($routeInfo[0]) {
         $handler = $routeInfo[1];
         $vars = $routeInfo[2];
         // ... call $handler with $vars
-//        var_dump($handler[0]);
+        var_dump($vars);
         $controller = new $handler[0];
         call_user_func([$controller,$handler[1]],$vars);
         break;

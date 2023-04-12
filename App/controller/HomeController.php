@@ -11,8 +11,13 @@ class HomeController{
         $this->templates = new Engine('App/views');
     }
 
-    public function register($vars = null)
+    public function registration($vars = null)
     {
         echo $this->templates->render('page_register');
+    }
+
+    public function registerService($vars = null)
+    {
+        echo $this->templates->render('registerService');
     }
 }
