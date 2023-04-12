@@ -3,3 +3,5 @@
 /.idea/oop.loc.iml
 /.idea/php.xml
 /.idea/vcs.xml
+/composer.lock
+/vendor/
