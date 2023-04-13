@@ -6,7 +6,7 @@ use Delight\Auth\Auth;
 use PDO;
 use Tamtamchik\SimpleFlash\Flash;
 
-class registration{
+class Registration{
 
 
     private $pdo,$auth;
@@ -21,8 +21,10 @@ class registration{
     public function registration($data){
         try {
             $userId = $this->auth->register($data['email'], $data['password']);
+//            $this->auth->confirmEmail($_GET['selector'], $_GET['token']);
 
             flash()->success(['We have signed up a new user with the ID ' . $userId]);
+//            flash()->info(['Email address has been verified']);
             header('Location: /login');
         }
         catch (\Delight\Auth\InvalidEmailException $e) {
@@ -46,6 +48,4 @@ class registration{
             die();
         }
     }
-
-
 }

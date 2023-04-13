@@ -1,9 +1,9 @@
 <?php
 
 
-use App\views\services\registration;
+use App\views\services\Registration;
 
-$querybuilder = new registration();
+$querybuilder = new Registration();
 
 //var_dump($_POST);die();
 
