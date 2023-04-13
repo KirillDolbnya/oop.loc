@@ -23,7 +23,7 @@ class registration{
             $userId = $this->auth->register($data['email'], $data['password']);
 
             flash()->success(['We have signed up a new user with the ID ' . $userId]);
-//            header('Location: /register');
+            header('Location: /login');
         }
         catch (\Delight\Auth\InvalidEmailException $e) {
             flash()->error(['Invalid email address']);

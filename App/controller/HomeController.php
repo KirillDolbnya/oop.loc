@@ -20,4 +20,9 @@ class HomeController{
     {
         echo $this->templates->render('registerService');
     }
+
+    public function login($vars = null)
+    {
+        echo $this->templates->render('page_login');
+    }
 }

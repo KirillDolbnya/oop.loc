@@ -13,21 +13,21 @@
     <!-- Remove Tap Highlight on Windows Phone IE -->
     <meta name="msapplication-tap-highlight" content="no">
     <!-- base css -->
-    <link id="vendorsbundle" rel="stylesheet" media="screen, print" href="/App/views/assets/css/vendors.bundle.css">
-    <link id="appbundle" rel="stylesheet" media="screen, print" href="/App/views/assets/css/app.bundle.css">
+    <link id="vendorsbundle" rel="stylesheet" media="screen, print" href="App/views/assets/css/vendors.bundle.css">
+    <link id="appbundle" rel="stylesheet" media="screen, print" href="App/views/assets/css/app.bundle.css">
     <link id="mytheme" rel="stylesheet" media="screen, print" href="#">
-    <link id="myskin" rel="stylesheet" media="screen, print" href="/App/views/assets/css/skins/skin-master.css">
+    <link id="myskin" rel="stylesheet" media="screen, print" href="App/views/assets/css/skins/skin-master.css">
     <!-- Place favicon.ico in the root directory -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/App/views/assets/img/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/App/views/assets/img/favicon/favicon-32x32.png">
-    <link rel="mask-icon" href="/App/views/assets/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
-    <link rel="stylesheet" media="screen, print" href="/App/views/assets/css/fa-brands.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="App/views/assets/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="App/views/assets/img/favicon/favicon-32x32.png">
+    <link rel="mask-icon" href="App/views/assets/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="stylesheet" media="screen, print" href="App/views/assets/css/fa-brands.css">
 </head>
 <body>
 
 <?php echo $this->section('content');?>
 
-<script src="assets/js/vendors.bundle.js"></script>
+<script src="App/views/assets/js/vendors.bundle.js"></script>
 <script>
     $("#js-login-btn").click(function(event)
     {
