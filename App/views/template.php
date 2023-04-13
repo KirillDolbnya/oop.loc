@@ -21,7 +21,11 @@
     <link rel="apple-touch-icon" sizes="180x180" href="App/views/assets/img/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="App/views/assets/img/favicon/favicon-32x32.png">
     <link rel="mask-icon" href="App/views/assets/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="stylesheet" media="screen, print" href="App/views/assets/css/statistics/chartist/chartist.css">
+    <link rel="stylesheet" media="screen, print" href="App/views/assets/css/miscellaneous/lightgallery/lightgallery.bundle.css">
+    <link rel="stylesheet" media="screen, print" href="App/views/assets/css/fa-solid.css">
     <link rel="stylesheet" media="screen, print" href="App/views/assets/css/fa-brands.css">
+    <link rel="stylesheet" media="screen, print" href="App/views/assets/css/fa-regular.css">
 </head>
 <body>
 
