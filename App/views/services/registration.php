@@ -4,6 +4,7 @@ namespace App\views\services;
 
 use Delight\Auth\Auth;
 use PDO;
+use Tamtamchik\SimpleFlash\Flash;
 
 class registration{
 
@@ -21,19 +22,28 @@ class registration{
         try {
             $userId = $this->auth->register($data['email'], $data['password']);
 
-            echo 'We have signed up a new user with the ID ' . $userId;
+            flash()->success(['We have signed up a new user with the ID ' . $userId]);
+//            header('Location: /register');
         }
         catch (\Delight\Auth\InvalidEmailException $e) {
-            die('Invalid email address');
+            flash()->error(['Invalid email address']);
+            header('Location: /register');
+            die();
         }
         catch (\Delight\Auth\InvalidPasswordException $e) {
-            die('Invalid password');
+            flash()->error(['Invalid password']);
+            header('Location: /register');
+            die();
         }
         catch (\Delight\Auth\UserAlreadyExistsException $e) {
-            die('User already exists');
+            flash()->error(['User already exists']);
+            header('Location: /register');
+            die();
         }
         catch (\Delight\Auth\TooManyRequestsException $e) {
-            die('Too many requests');
+            flash()->error(['Too many requests']);
+            header('Location: /register');
+            die();
         }
     }
 

@@ -9,5 +9,4 @@ $querybuilder = new registration();
 
 $querybuilder->registration($_POST);
 
-header('Location: /');
 

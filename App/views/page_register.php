@@ -1,4 +1,8 @@
 <?php
+if( !session_id() ) {
+    session_start();
+}
+//var_dump($_SESSION);
 
 $this->layout('template',['title' => 'Регистрация']);
 
@@ -39,8 +43,8 @@ $this->layout('template',['title' => 'Регистрация']);
                             </div>
                             <div class="col-xl-6 ml-auto mr-auto">
                                 <div class="card p-4 rounded-plus bg-faded">
-                                    <div class="alert alert-danger text-dark" role="alert">
-                                        <strong>Уведомление!</strong> Этот эл. адрес уже занят другим пользователем.
+                                    <div>
+                                        <?php echo flash()->display(); ?>
                                     </div>
                                     <form id="js-login" novalidate="" action="/registerService" method="post">
                                         <div class="form-group">
