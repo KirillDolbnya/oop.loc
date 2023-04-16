@@ -7,6 +7,7 @@ $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
     $r->addRoute('GET', '/registration', ['App\controller\HomeController','registration']);
     $r->addRoute('POST', '/registerService', ['App\controller\HomeController','registerService']);
     $r->addRoute('GET', '/login', ['App\controller\HomeController','login']);
+    $r->addRoute('POST', '/loginService', ['App\controller\HomeController','singIn']);
 });
 
 // Fetch method and URI from somewhere

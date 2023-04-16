@@ -18,16 +18,19 @@ $this->layout('template',['title' => 'Войти']);
             <div class="">
                 <?php echo flash()->display(); ?>
             </div>
-            <form action="">
+            <form action="/loginService" method="post">
                 <div class="form-group">
                     <label class="form-label" for="username">Email</label>
-                    <input type="email" id="username" class="form-control" placeholder="Эл. адрес" value="">
+                    <input name="email" type="email" id="username" class="form-control" placeholder="Эл. адрес" value="">
                 </div>
                 <div class="form-group">
                     <label class="form-label" for="password">Пароль</label>
-                    <input type="password" id="password" class="form-control" placeholder="" >
+                    <input name="password" type="password" id="password" class="form-control" placeholder="" >
                 </div>
                 <button type="submit" class="btn btn-default float-right">Войти</button>
+                <a href="/verification">
+                    <button class="btn btn-default float-left">Email verification</button>
+                </a>
             </form>
         </div>
         <div class="blankpage-footer text-center">

@@ -25,4 +25,8 @@ class HomeController{
     {
         echo $this->templates->render('page_login');
     }
+    public function singIn($vars = null)
+    {
+        echo $this->templates->render('loginService');
+    }
 }
