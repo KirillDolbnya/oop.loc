@@ -31,7 +31,7 @@ $this->layout('template',['title' => 'Войти']);
             </form>
         </div>
         <div class="blankpage-footer text-center">
-            Нет аккаунта? <a href="/registration"><strong>Зарегистрироваться</strong>
+            Нет аккаунта? <a href="/registration"><strong>Зарегистрироваться</strong></a>
         </div>
     </div>
     <video poster="/App/views/assets/img/backgrounds/clouds.png" id="bgvid" playsinline autoplay muted loop>
