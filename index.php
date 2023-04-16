@@ -4,7 +4,7 @@ require_once "vendor/autoload.php";
 
 
 $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
-    $r->addRoute('GET', '/register', ['App\controller\HomeController','registration']);
+    $r->addRoute('GET', '/registration', ['App\controller\HomeController','registration']);
     $r->addRoute('POST', '/registerService', ['App\controller\HomeController','registerService']);
     $r->addRoute('GET', '/login', ['App\controller\HomeController','login']);
 });
