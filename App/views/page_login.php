@@ -3,8 +3,9 @@ if( !session_id() ) {
     session_start();
 }
 
-$this->layout('template',['title' => 'Войти']);
-
+$this->layout('template',['title' => 'Войти','link'=>'App/views/assets/css/page-login-alt.css']);
+//$this->layout('template',['link'=>'App/views/assets/css/page-login-alt.css']);
+//<link rel="stylesheet" media="screen, print"
 ?>
     <div class="blankpage-form-field">
         <div class="page-logo m-0 w-100 align-items-center justify-content-center rounded border-bottom-left-radius-0 border-bottom-right-radius-0 px-4">
