@@ -24,10 +24,29 @@ class Registration
 //        var_dump($data['email'],$data['password']);die();
         try {
             $userId = $this->auth->register($data['email'], $data['password'],null, function ($selector, $token) {
-                echo 'Send ' . $selector . ' and ' . $token . ' to the user (e.g. via email)';
-                echo '  For emails, consider using the mail(...) function, Symfony Mailer, Swiftmailer, PHPMailer, etc.';
-                echo '  For SMS, consider using a third-party service and a compatible SDK';
+                try {
+                    $this->auth->confirmEmail($selector, $token);
+                    \flash()->info('Email address has been verified');
+
+                }
+                catch (\Delight\Auth\InvalidSelectorTokenPairException $e) {
+                    \flash()->error('Invalid token');
+                    die();
+                }
+                catch (\Delight\Auth\TokenExpiredException $e) {
+                    \flash()->error('Token expired');
+                    die();
+                }
+                catch (\Delight\Auth\UserAlreadyExistsException $e) {
+                    \flash()->error('Email address already exists');
+                    die();
+                }
+                catch (\Delight\Auth\TooManyRequestsException $e) {
+                    \flash()->error('Too many requests');
+                    die();
+                }
             });
+
 
             \flash()->success('We have signed up a new user with the ID ' . $userId);
             header('Location: /login');
