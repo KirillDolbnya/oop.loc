@@ -26,9 +26,9 @@
     <link rel="stylesheet" media="screen, print" href="App/views/assets/css/fa-solid.css">
     <link rel="stylesheet" media="screen, print" href="App/views/assets/css/fa-brands.css">
     <link rel="stylesheet" media="screen, print" href="App/views/assets/css/fa-regular.css">
-    <link rel="stylesheet" media="screen, print" href="App/views/assets/css/page-login-alt.css">
+    <link rel="stylesheet" media="screen, print" href="<?php echo $this->e($link); ?>">
 </head>
-<body>
+<body class="mod-bg-1 mod-nav-link">
 
 <?php echo $this->section('content');?>
 

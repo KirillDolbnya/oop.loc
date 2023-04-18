@@ -29,4 +29,8 @@ class HomeController{
     {
         echo $this->templates->render('loginService');
     }
+    public function users($vars = null)
+    {
+        echo $this->templates->render('users');
+    }
 }
