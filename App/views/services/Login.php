@@ -8,6 +8,8 @@ use Tamtamchik\SimpleFlash\Flash;
 
 class Login
 {
+    private $pdo, $auth;
+
     public function __construct()
     {
         $this->pdo = new PDO("mysql:host=localhost;dbname=oop_register;", "root", "");
@@ -19,7 +21,7 @@ class Login
             $this->auth->login($data['email'], $data['password']);
 
             \flash()->success('User is logged in');
-            echo 'User is logged in';
+            header('Location: /users');
         }
         catch (\Delight\Auth\InvalidEmailException $e) {
             flash()->error('Wrong email address');
