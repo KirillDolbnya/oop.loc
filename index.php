@@ -9,6 +9,7 @@ $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
     $r->addRoute('GET', '/login', ['App\controller\HomeController','login']);
     $r->addRoute('POST', '/loginService', ['App\controller\HomeController','singIn']);
     $r->addRoute('GET', '/users', ['App\controller\HomeController','users']);
+    $r->addRoute('GET', '/logout', ['App\controller\HomeController','logout']);
 });
 
 // Fetch method and URI from somewhere
