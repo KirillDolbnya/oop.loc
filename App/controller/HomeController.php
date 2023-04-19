@@ -33,4 +33,9 @@ class HomeController{
     {
         echo $this->templates->render('users');
     }
+
+    public function logout($vars = null)
+    {
+        echo $this->templates->render('logoutService');
+    }
 }
