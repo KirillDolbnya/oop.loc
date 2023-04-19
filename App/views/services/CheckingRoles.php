@@ -16,9 +16,17 @@ class CheckingRoles
         $this->auth = new Auth($this->pdo);
     }
 
-    function canEditArticle(\Delight\Auth\Auth $user) {
-        return $user->hasAnyRole(
-            \Delight\Auth\Role::ADMIN,
-        );
+    public function checkrole($userId){
+        try {
+            if ($this->auth->admin()->doesUserHaveRole($userId, \Delight\Auth\Role::ADMIN)) {
+               return true;
+            }
+            else {
+                return false;
+            }
+        }
+        catch (\Delight\Auth\UnknownIdException $e) {
+            die('Unknown user ID');
+        }
     }
 }
