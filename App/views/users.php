@@ -55,7 +55,7 @@ $this->layout('template',['title' => 'Users']);
             <div class="row">
                 <div class="col-xl-12">
                     <?php if ($checkRole->checkrole($_SESSION['auth_user_id'])) {?>
-                        <a class="btn btn-success" href="create_user.html">Добавить</a>
+                        <a class="btn btn-success" href="/create">Добавить</a>
                     <?php } ?>
 
                     <div class="border-faded bg-faded p-3 mb-g d-flex mt-3">
@@ -88,26 +88,26 @@ $this->layout('template',['title' => 'Users']);
                                         <i class="fal fa-angle-down d-inline-block ml-1 fs-md"></i>
                                     </a>
                                     <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="edit.html">
+                                        <a class="dropdown-item" href="/edit/<?php echo $user['id']?>">
                                             <i class="fa fa-edit"></i>
                                         Редактировать</a>
-                                        <a class="dropdown-item" href="security.html">
+                                        <a class="dropdown-item" href="/security/<?php echo $user['id']?>">
                                             <i class="fa fa-lock"></i>
                                         Безопасность</a>
-                                        <a class="dropdown-item" href="status.html">
+                                        <a class="dropdown-item" href="/status/<?php echo $user['id']?>">
                                             <i class="fa fa-sun"></i>
                                         Установить статус</a>
-                                        <a class="dropdown-item" href="media.html">
+                                        <a class="dropdown-item" href="/media/<?php echo $user['id']?>">
                                             <i class="fa fa-camera"></i>
                                             Загрузить аватар
                                         </a>
-                                        <a href="#" class="dropdown-item" onclick="return confirm('are you sure?');">
+                                        <a href="/delete?id=<?php echo $_SESSION['auth_user_id'] ?>" class="dropdown-item" onclick="return confirm('are you sure?');">
                                             <i class="fa fa-window-close"></i>
                                             Удалить
                                         </a>
                                     </div>
                                     <?php } ?>
-                                    <span class="text-truncate text-truncate-xl">IT Director, Gotbootstrap Inc.</span>
+                                    <span class="text-truncate text-truncate-xl"><?php echo $user['work'] ?></span>
                                 </div>
                                 <button class="js-expand-btn btn btn-sm btn-default d-none" data-toggle="collapse" data-target="#c_1 > .card-body + .card-body" aria-expanded="false">
                                     <span class="collapsed-hidden">+</span>
@@ -118,11 +118,11 @@ $this->layout('template',['title' => 'Users']);
                         <div class="card-body p-0 collapse show">
                             <div class="p-3">
                                 <a href="tel:+13174562564" class="mt-1 d-block fs-sm fw-400 text-dark">
-                                    <i class="fas fa-mobile-alt text-muted mr-2"></i> +1 317-456-2564</a>
+                                    <i class="fas fa-mobile-alt text-muted mr-2"></i><?php echo $user['tel'] ?></a>
                                 <a href="mailto:oliver.kopyov@smartadminwebapp.com" class="mt-1 d-block fs-sm fw-400 text-dark">
                                     <i class="fas fa-mouse-pointer text-muted mr-2"></i>  <?php  echo $user['email']?></a>
                                 <address class="fs-sm fw-400 mt-4 text-muted">
-                                    <i class="fas fa-map-pin mr-2"></i> 15 Charist St, Detroit, MI, 48212, USA</address>
+                                    <i class="fas fa-map-pin mr-2"></i><?php echo $user['address'] ?></address>
                                 <div class="d-flex flex-row">
                                     <a href="javascript:void(0);" class="mr-2 fs-xxl" style="color:#4680C2">
                                         <i class="fab fa-vk"></i>
