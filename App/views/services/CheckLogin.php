@@ -3,6 +3,7 @@
 namespace App\views\services;
 
 use Delight\Auth\Auth;
+use Tamtamchik\SimpleFlash\Flash;
 use PDO;
 
 class CheckLogin
@@ -21,9 +22,9 @@ class CheckLogin
             return true;
         }
         else {
+            \flash()->info('Войдите в профиль');
             header('Location: /login');
-            return false;
+            die();
         }
     }
-
 }
