@@ -38,4 +38,35 @@ class HomeController{
     {
         echo $this->templates->render('logoutService');
     }
-}
+
+    public function create($vars = null)
+    {
+        echo $this->templates->render('create_user');
+    }
+
+    public function createService($vars = null)
+    {
+        echo $this->templates->render('createService');
+    }
+
+    public function edit($vars = null)
+    {
+        echo $this->templates->render('edit');
+    }
+
+    public function editService($vars = null)
+    {
+        echo $this->templates->render('editService');
+    }
+
+    public function security($vars = null)
+    {
+        echo $this->templates->render('security');
+    }
+
+    public function securityService($vars = null)
+    {
+        echo $this->templates->render('securityService');
+    }
+
+    }
