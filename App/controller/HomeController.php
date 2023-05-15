@@ -74,4 +74,9 @@ class HomeController{
         echo $this->templates->render('delete');
     }
 
+    public function profile($vars = null)
+    {
+        echo $this->templates->render('page_profile');
+    }
+
     }
