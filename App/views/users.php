@@ -101,7 +101,7 @@ $this->layout('template',['title' => 'Users']);
                                             <i class="fa fa-camera"></i>
                                             Загрузить аватар
                                         </a>
-                                        <a href="/delete?id=<?php echo $_SESSION['auth_user_id'] ?>" class="dropdown-item" onclick="return confirm('are you sure?');">
+                                        <a href="/delete/<?php echo $user['id']?>" class="dropdown-item" onclick="return confirm('are you sure?');">
                                             <i class="fa fa-window-close"></i>
                                             Удалить
                                         </a>
