@@ -69,4 +69,9 @@ class HomeController{
         echo $this->templates->render('securityService');
     }
 
+    public function delete($vars = null)
+    {
+        echo $this->templates->render('delete');
+    }
+
     }
