@@ -28,5 +28,7 @@ class EditUsers
         $sth = $this->pdo->prepare($update->getStatement());
         $sth->execute($update->getBindValues());
 
+        header('Location: /users');
+
     }
 }
