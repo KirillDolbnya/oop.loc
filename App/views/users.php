@@ -21,7 +21,6 @@ var_dump($_SESSION);
 $this->layout('template',['title' => 'Users']);
 
 ?>
-<!--    <body class="mod-bg-1 mod-nav-link">-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary bg-primary-gradient">
             <a class="navbar-brand d-flex align-items-center fw-500" href="/users"><img alt="logo" class="d-inline-block align-top mr-2" src="App/views/assets/img/logo.png"> Учебный проект</a> <button aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarColor02" data-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarColor02">
@@ -79,7 +78,7 @@ $this->layout('template',['title' => 'Users']);
                             <div class="d-flex flex-row align-items-center">
                                 <span class="status status-<?php echo $user['state'] ?> mr-3">
                                     <a href="/profile/<?php echo $user['id']?>">
-                                        <span class="rounded-circle profile-image d-block " style="background-image:url('/App/views/assets/img/demo/avatars/avatar-b.png'); background-size: cover;"></span>
+                                        <span class="rounded-circle profile-image d-block " style="background-image:url('/App/views/assets/img/upload/<?php echo $user['image'] ?>'); background-size: cover;"></span>
                                     </a>
                                 </span>
                                 <div class="info-card-text flex-1">
