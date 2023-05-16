@@ -44,7 +44,7 @@ $this->layout('template',['title' => 'Users']);
         <main id="js-page-content" role="main" class="page-content mt-3">
             <div class="">
                 <?php
-                echo flash()->display();
+                echo \flash()->display();
                 ?>
             </div>
             <div class="subheader">
@@ -77,7 +77,7 @@ $this->layout('template',['title' => 'Users']);
                     <div id="c_1" class="card border shadow-0 mb-g shadow-sm-hover" data-filter-tags="oliver kopyov">
                         <div class="card-body border-faded border-top-0 border-left-0 border-right-0 rounded-top">
                             <div class="d-flex flex-row align-items-center">
-                                <span class="status status-success mr-3">
+                                <span class="status status-<?php echo $user['state'] ?> mr-3">
                                     <a href="/profile/<?php echo $user['id']?>">
                                         <span class="rounded-circle profile-image d-block " style="background-image:url('/App/views/assets/img/demo/avatars/avatar-b.png'); background-size: cover;"></span>
                                     </a>
