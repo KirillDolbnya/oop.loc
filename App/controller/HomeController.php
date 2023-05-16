@@ -89,4 +89,14 @@ class HomeController{
         echo $this->templates->render('statusService');
     }
 
+    public function media($vars = null)
+    {
+        echo $this->templates->render('media');
+    }
+
+    public function mediaService($vars = null)
+    {
+        echo $this->templates->render('mediaService');
+    }
+
     }
