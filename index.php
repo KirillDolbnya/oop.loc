@@ -18,6 +18,8 @@ $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
     $r->addRoute('POST', '/securityService', ['App\controller\HomeController','securityService']);
     $r->addRoute('GET', '/delete/{id:\d+}', ['App\controller\HomeController','delete']);
     $r->addRoute('GET', '/profile/{id:\d+}', ['App\controller\HomeController','profile']);
+    $r->addRoute('GET', '/status/{id:\d+}', ['App\controller\HomeController','status']);
+    $r->addRoute('POST', '/statusService', ['App\controller\HomeController','statusService']);
 });
 
 // Fetch method and URI from somewhere

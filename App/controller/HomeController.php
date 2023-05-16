@@ -79,4 +79,14 @@ class HomeController{
         echo $this->templates->render('page_profile');
     }
 
+    public function status($vars = null)
+    {
+        echo $this->templates->render('status');
+    }
+
+    public function statusService($vars = null)
+    {
+        echo $this->templates->render('statusService');
+    }
+
     }
