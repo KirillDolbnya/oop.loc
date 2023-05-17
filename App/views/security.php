@@ -21,7 +21,7 @@ $checkRole = new CheckingRoles();
 $idUser = $GLOBALS['vars']['id'];
 $idUser = (int)$idUser;
 
-if ($_SESSION['auth_user_id'] !== $idUser && !$checkRole->checkrole($_SESSION['auth_user_id'])){
+if ($_SESSION['auth_user_id'] !== $idUser){
     \flash()->error('Можно редактировать только свой профиль');
     header('Location: /users');
     die();
@@ -51,9 +51,9 @@ if ($_SESSION['auth_user_id'] !== $idUser && !$checkRole->checkrole($_SESSION['a
             <h1 class="subheader-title">
                 <i class='subheader-icon fal fa-lock'></i> Безопасность
             </h1>
-            <div>
-                <?php echo flash()->display(); ?>
-            </div>
+        </div>
+        <div>
+            <?php echo flash()->display(); ?>
         </div>
         <form action="/securityService" method="post">
             <div class="row">
@@ -87,13 +87,15 @@ if ($_SESSION['auth_user_id'] !== $idUser && !$checkRole->checkrole($_SESSION['a
                                     <input name="NewAgainPassword" type="password" id="simpleinput" class="form-control">
                                 </div>
 
+                                <div>
+                                    <input type="hidden" name="id" value="<?php echo $idUser ?>">
+                                </div>
 
                                 <div class="col-md-12 mt-3 d-flex flex-row-reverse">
                                     <button class="btn btn-warning">Изменить</button>
                                 </div>
                             </div>
                         </div>
-                        
                     </div>
                 </div>
             </div>
