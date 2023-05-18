@@ -87,7 +87,7 @@ if ($_SESSION['auth_user_id'] !== $idUser && !$checkRole->checkrole($_SESSION['a
                                     <label class="form-label" for="simpleinput">Адрес</label>
                                     <input name="address" type="text" id="simpleinput" class="form-control">
                                 </div>
-                                <input type="hidden" name="id" value="<?php $idUser ?>">
+                                <input type="hidden" name="id" value="<?php echo $idUser ?>">
                                 <div class="col-md-12 mt-3 d-flex flex-row-reverse">
                                     <button type="submit" class="btn btn-warning">Редактировать</button>
                                 </div>
